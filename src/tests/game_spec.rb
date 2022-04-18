@@ -2,7 +2,8 @@ require_relative '../classes/game'
 
 describe 'Game Class' do
   before :each do
-    @game = Game.new(false, 'Author')
+    @game = Game.new(false, '10/10/2021', '10/10/2010')
+    p @game
   end
 
   context 'With valid input to #new' do
@@ -18,16 +19,16 @@ describe 'Game Class' do
       expect(instance_property).to eq false
     end
 
-    it 'instance created should have a "last_played_at" instance property as what is given in initialiser' do
-      instance_property = @game.last_played_at
+    it 'instance created should have a "published_date" instance property as what is given in initialiser' do
+      instance_property = @game.published_date
 
-      expect(instance_property).to eq 2010
+      expect(instance_property).to eq '10/10/2010'
     end
 
-    it 'instance created should have a "publish_date" instance property that should be a Date object' do
-      instance_property = @game.publish_date
+    it 'instance created should have a "last_played_at" instance property that should be a Date object' do
+      instance_property_class = @game.last_played_at.class
 
-      expect(instance_property).to be Date
+      expect(instance_property_class).to be Date
     end
   end
 end
