@@ -4,7 +4,7 @@ class Item
   attr_accessor :archived, :published_date
   attr_reader :genre, :label, :author
 
-  def initialize(id = rand(0..500), published_date, archived)
+  def initialize(published_date, archived, id = ran(0..500))
     @id = id
     @published_date = published_date
     @archived = archived
@@ -24,16 +24,17 @@ class Item
     @label = label
     label.items.push(self) unless label.items.include?(self)
   end
-  
+
   def move_to_archive()
     @archived = true if can_be_archived?
   end
 
   private
+
   def can_be_archived?()
     today = Date.today
-    10_years_ago = Date.new(today.year - 10, today.month, today.day)
+    ten_years_ago = Date.new(today.year - 10, today.month, today.day)
 
-    @published_date < 10_years_ago
+    @published_date < ten_years_ago
   end
 end
