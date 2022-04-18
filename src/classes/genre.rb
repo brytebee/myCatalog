@@ -1,5 +1,5 @@
 class Genre
-  attr_accessor :name
+  attr_accessor :name, :genre
   attr_reader :id, :items
 
   def initialize(name)
@@ -9,7 +9,7 @@ class Genre
   end
 
   def add_item(item)
-    @item << item unless @item.include?(item)
-    items.genre = self
+    @items << item unless @items.include?(item)
+    @items.genre = self
   end
 end
