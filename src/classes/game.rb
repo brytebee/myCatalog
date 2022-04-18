@@ -13,7 +13,7 @@ class Game < Item
   private
 
   def can_be_archived?
-    dayDifference = Date.now - @last_played_at.year
-    super && seniority > 712
+    day_difference = Date.now - @last_played_at.year
+    super && day_difference > 712
   end
 end
