@@ -4,10 +4,10 @@ class Item
   attr_accessor :archived, :published_date
   attr_reader :genre, :label, :author
 
-  def initialize(published_date, archived, id = ran(0..500))
+  def initialize(published_date, id = rand(0..500))
     @id = id
     @published_date = published_date
-    @archived = archived
+    @archived = false
   end
 
   def genre=(genre)
