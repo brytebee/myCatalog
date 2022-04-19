@@ -24,7 +24,7 @@ module PreserveMusicAlbumGenre
       MusicAlbum.new(on_spotify['pulish_date'], on_spotify['on_spotify'])
     end
   end
-  
+
   def load_genre
     return [] unless File.exist?('./store/genre.json')
 
