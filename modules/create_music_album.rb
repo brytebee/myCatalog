@@ -23,14 +23,14 @@ module CreateMusicAlbum
       list_all_genres
       genre_index = gets.chomp.to_i
       @genres[genre_index].add_item(@music_album[-1])
-      puts 'Album has been added to label'
+      puts 'Album has been added to Genre'
     end
   end
 
   def create_genre(item = nil)
     print 'Enter Genre name: '
     name = gets.chomp
-    @labels << Label.new(name) if item.nil?
+    @genres << Label.new(name) if item.nil?
     genre = Label.new(name)
     genre.add_item(item)
     @genres << genre
