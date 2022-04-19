@@ -29,7 +29,7 @@ module PreserveMusicAlbumGenre
     return [] unless File.exist?('./store/genre.json')
 
     JSON.parse(File.read('./store/genre.json')).map do |genre|
-      MusicAlbum.new(genre['name'])
+      Genre.new(genre['name'])
     end
   end
 end

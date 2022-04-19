@@ -20,6 +20,7 @@ def options
   input = gets.chomp
   if input == '10'
     @app.exit_app
+    return
   end
   @app.option(input)
   options
