@@ -8,6 +8,7 @@ require_relative '../modules/list_books'
 require_relative '../modules/list_labels'
 require_relative '../modules/create_music_album'
 require_relative '../modules/list_genre'
+require_relative '../modules/list_music_albums'
 
 class App
   include CreateBook
@@ -15,6 +16,7 @@ class App
   include BookList
   include LabelList
   include GenreList
+  include MusicAblbumList
 
   def initialize
     @books = []
