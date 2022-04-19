@@ -2,7 +2,11 @@ module CreateMusicAlbum
   def on_spotify?
     print 'Is album on Spotify? [Y/N]: '
     on_spotify = gets.chomp.downcase
-    on_spotify == 'y' ? true : on_spotify == 'n' ? false : on_spotify?
+    if on_spotify == 'y'
+      true
+    else
+      on_spotify == 'n' ? false : on_spotify?
+    end
   end
 
   def add_music_album
