@@ -1,4 +1,4 @@
-require './src/classes/app'
+require './classes/app'
 
 def list_of_options
   puts
@@ -23,7 +23,7 @@ def options
 end
 
 def main
-  App.new
+  @app = App.new
   options
 end
 
