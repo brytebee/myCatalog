@@ -6,9 +6,11 @@ require_relative './genre'
 require_relative '../modules/create_book'
 require_relative '../modules/list_books'
 require_relative '../modules/list_labels'
-require_relative '../modules/create_music_album'
-require_relative '../modules/list_genre'
-require_relative '../modules/list_music_albums'
+require './modules/create_music_album'
+require './modules/list_genre'
+require './modules/list_music_albums'
+require './modules/save'
+
 
 class App
   include CreateBook
@@ -17,12 +19,13 @@ class App
   include LabelList
   include GenreList
   include MusicAblbumList
+  include PreserveMusicAlbumGenre
 
   def initialize
     @books = []
     @labels = []
-    @music_albums = []
-    @genres = []
+    @music_albums = load_music_album
+    @genres = load_genre
   end
 
   # rubocop:disable Metrics
