@@ -10,18 +10,18 @@ module CreateMusicAlbum
     is_on_spotify = on_spotify?
     publish_date = DateTime.now.strftime('%F')
     puts "Published date: #{publish_date} and #{is_on_spotify ? 'on spotify.' : 'not on spotify.'}"
-    @music_album << MusicAlbum.new(publish_date, is_on_spotify)
+    @music_albums << MusicAlbum.new(publish_date, is_on_spotify)
     puts 'Music album created successfully!'
 
     print 'Create new genre: (y), or use already created genre: (n) [Y/N] '
     input = gets.chomp.downcase == 'y' || false
     if input
-      create_genre(@music_album[-1])
+      create_genre(@music_albums[-1])
     else
       puts 'Select a Album by index:'
       list_all_genres
       genre_index = gets.chomp.to_i
-      @genres[genre_index].add_item(@music_album[-1])
+      @genres[genre_index].add_item(@music_albums[-1])
       puts 'Album has been added to Genre'
     end
   end
