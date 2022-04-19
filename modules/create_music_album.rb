@@ -1,39 +1,28 @@
 module CreateMusicAlbum
   def add_music_album
     puts 'Create a new Album'
+
     def on_spotify?
-      print 'Is album on Spotify? "Y" or "N": '
+      print 'Is album on Spotify? [Y/N]: '
       on_spotify = gets.chomp.downcase
       on_spotify == 'y' ? true : on_spotify == 'n' ? false : on_spotify?
     end
-    on_spotify?
-    publish_date = DateTime.now.strftime('%F')
-    puts publish_date
-    # @books << Book.new(publish_date, publisher, cover_state)
-    # puts 'Book  created successfully.'
 
-    # print 'Create new label: (y), or use already created label: (n) [Y/N] '
-    # input = gets.chomp.downcase == 'y' || false
-    # if input
-    #   create_label(@books[-1])
-    # else
-    #   puts 'Select a Label by index:'
-    #   list_all_labels
-    #   label_index = gets.chomp.to_i
-    #   @labels[label_index].add_item(@books[-1])
-    #   puts 'book has been added to label'
+    is_on_spotify = on_spotify?
+    publish_date = DateTime.now.strftime('%F')
+    puts "Published date: #{publish_date} and #{is_on_spotify ? 'on spotify.' : 'not on spotify.'}"
+    @music_album << MusicAlbum.new(publish_date, is_on_spotify)
+    puts 'Music album created successfully!'
+
+    print 'Create new label: (y), or use already created label: (n) [Y/N] '
+    input = gets.chomp.downcase == 'y' || false
+    if input
+      create_genre(@music_album[-1])
+    else
+      puts 'Select a Album by index:'
+      list_all_genres
+      genre_index = gets.chomp.to_i
+      @genres[genre_index].add_item(@music_album[-1])
+      puts 'Album has been added to label'
     end
   end
-
-#   def create_label(item = nil)
-#     print 'Enter label title: '
-#     title = gets.chomp
-#     print 'Enter label color: '
-#     color = gets.chomp
-#     @labels << Label.new(title, color) if item.nil?
-#     label = Label.new(title, color)
-#     label.add_item(item)
-#     @labels << label
-#     puts 'Label has been added successfully'
-#   end
-# end
