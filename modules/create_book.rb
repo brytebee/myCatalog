@@ -16,6 +16,9 @@ module CreateBook
     input = gets.chomp.downcase == 'y' || false
     if input
       create_label(@books[-1])
+    elsif @labels.length.zero?
+      puts 'Database is empty. Create new label'
+      create_label(@books[-1])
     else
       puts 'Select a Label by index:'
       list_all_labels
