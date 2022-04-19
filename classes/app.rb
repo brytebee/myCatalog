@@ -1,4 +1,16 @@
+require_relative './item'
+require_relative './book'
+require_relative './label'
+require_relative '../modules/create_book'
+
 class App
+  include CreateBook
+
+  def initialize
+    @books = []
+    @labels = []
+  end
+
   # rubocop:disable Metrics
   def option(input)
     case input
