@@ -12,7 +12,6 @@ require './modules/list_music_albums'
 require './modules/save'
 require 'json'
 
-
 class App
   include CreateBook
   include CreateMusicAlbum
