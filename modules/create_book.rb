@@ -34,6 +34,7 @@ module CreateBook
     label = Label.new(title, color)
     label.add_item(item)
     @labels << label
+    write_save
     puts 'Label has been added successfully'
   end
 end

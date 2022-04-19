@@ -13,14 +13,6 @@ class Book < Item
     super || @cover_state == 'bad'
   end
 
-  # def to_json(*args)
-  #   {
-  #     JSON.create_id => self.class.name,
-  #     'id' => @id,
-  #     'publisher' => @publisher,
-  #     'publish_date' => @publish_date,
-  #     'cover_state' => @cover_state
-  #   }.to_json(*args)
   def to_json(*args)
     {
       'book' => self.class.name,
