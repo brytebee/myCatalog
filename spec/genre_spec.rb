@@ -4,7 +4,7 @@ require 'date'
 
 describe Genre do
   context 'tests the Genre class' do
-    before(:any) do
+    before(:all) do
       @gen = Genre.new('Fiction')
       today = Date.today
       twelve_years = Date.new(today.year - 12, today.month, today.day)
@@ -15,6 +15,10 @@ describe Genre do
 
     it 'should return an instance of Genre class' do
       expect(@gen.instance_of?(Genre)).to be(true)
+    end
+
+    it 'return the length of items' do
+      expect(@gen.items.length).to be(0)
     end
   end
 end
