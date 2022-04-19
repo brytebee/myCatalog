@@ -4,9 +4,11 @@ require_relative './label'
 require_relative '../modules/create_book'
 require_relative '../modules/list_books'
 require_relative '../modules/list_labels'
+require_relative '../modules/create_music_album'
 
 class App
   include CreateBook
+  include CreateMusicAlbum
   include BookList
   include LabelList
 

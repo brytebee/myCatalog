@@ -1,8 +1,12 @@
 module CreateMusicAlbum
-  def add_album
+  def add_music_album
     puts 'Create a new Album'
-    print 'Is album on Spotify?: '
-    on_spotify = gets.chomp.downcase == 'y' || 'n'
+    def on_spotify?
+      print 'Is album on Spotify? "Y" or "N": '
+      on_spotify = gets.chomp.downcase
+      on_spotify == 'y' ? true : on_spotify == 'n' ? false : on_spotify?
+    end
+    on_spotify?
     publish_date = DateTime.now.strftime('%F')
     puts publish_date
     # @books << Book.new(publish_date, publisher, cover_state)

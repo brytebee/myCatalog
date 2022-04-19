@@ -18,8 +18,13 @@ end
 def options
   list_of_options
   input = gets.chomp
-  @app.option(input)
-  options
+  unless input == '10'
+    @app.option(input)
+    options
+    puts
+    puts 'Thank You for using my myCatalog Library!'
+    puts 'Built with 💖 by Bright | Dejan | Alick 🗽'
+  end
 end
 
 def main
