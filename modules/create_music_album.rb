@@ -26,3 +26,14 @@ module CreateMusicAlbum
       puts 'Album has been added to label'
     end
   end
+
+  def create_genre(item = nil)
+    print 'Enter Genre name: '
+    name = gets.chomp
+    @labels << Label.new(name) if item.nil?
+    genre = Label.new(name)
+    genre.add_item(item)
+    @genres << genre
+    puts 'Genre has been added successfully'
+  end
+end
