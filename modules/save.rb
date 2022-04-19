@@ -16,4 +16,12 @@ module PreserveMusicAlbumGenre
 
     File.write('./store/genre.json', JSON.generate(data))
   end
+
+  def load_music_album
+    return [] unless File.exist?('./store/music_album.json')
+
+    JSON.parse(File.read('./store/music_album.json')).map do |on_spotify|
+      MusicAlbum.new(on_spotify['pulish_date'], on_spotify['on_spotify'])
+    end
+  end
 end
