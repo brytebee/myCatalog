@@ -19,7 +19,7 @@ class App
   def initialize
     @books = []
     @labels = []
-    @music_album = []
+    @music_albums = []
     @genres = []
   end
 
