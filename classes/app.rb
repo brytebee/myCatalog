@@ -20,6 +20,7 @@ class App
     @books = []
     @labels = []
     @music_album = []
+    @genres = []
   end
 
   # rubocop:disable Metrics
