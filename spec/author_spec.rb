@@ -31,13 +31,13 @@ describe 'Author Class' do
 
     it 'should add an object to the class instance property "item" array' do
       instance_property_item_length = @author.items.length
-      p instance_property_item_length
+
       expect(instance_property_item_length).to eq 1
     end
 
     it 'should add an object to the "item" array with a published_date as in initialiser' do
       instance_property_published_date = @author.items[0].published_date
-      p instance_property_published_date
+
       expect(instance_property_published_date).to eq '10/10/20'
     end
   end
