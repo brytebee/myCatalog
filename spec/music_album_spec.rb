@@ -26,7 +26,7 @@ describe MusicAlbum do
       instance_property = @album2.publish_date
       expect(instance_property).to be(@twelve_years)
     end
-    
+
     it 'instance of on spotify property' do
       instance_property = @album1.on_spotify
       expect(instance_property).to eq(false)
