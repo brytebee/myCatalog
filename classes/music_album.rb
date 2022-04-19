@@ -6,7 +6,6 @@ class MusicAlbum < Item
   def initialize(publish_date, on_spotify)
     super(publish_date)
     @on_spotify = on_spotify
-    super(published_date)
   end
 
   private
