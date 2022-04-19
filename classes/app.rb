@@ -13,6 +13,7 @@ class App
   def initialize
     @books = []
     @labels = []
+    @music_album = []
   end
 
   # rubocop:disable Metrics
@@ -38,7 +39,7 @@ class App
     when '9'
       add_game
     else
-      puts 'Please enter a number between 1 and 13.'
+      puts 'Please enter a number between 1 and 10.'
       puts
     end
     # rubocop:enable Metrics
