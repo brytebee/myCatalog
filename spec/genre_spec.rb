@@ -8,6 +8,7 @@ describe Genre do
     today = Date.today
     twelve_years = Date.new(today.year - 12, today.month, today.day)
     item = Item.new(twelve_years, true)
+    p gen
 
     it 'should return an instance of Genre class' do
       expect(gen.instance_of?(Genre)).to be(true)
@@ -21,22 +22,37 @@ describe Genre do
     #   gen.add_item('Science')
     #   expect(gen.items.length).to be(1)
     # end
-  end
-end
 
-describe Genre do
-  context 'when instantiated' do
-    it 'with name should create a Rental' do
-      genre = Genre.new('Science')
-      date = Time.now.strftime('%F')
-      itema = Item.new(date, false)
-      genre.add_item(itema)
-
-      expect(genre.class).to eq Genre
-      expect(genre.items.length).to be >= 1
+    it 'instance of name' do
+      instance_property = gen.name
+      expect(instance_property).to eq('Fiction')
+    end
+    
+    it 'instance of name' do
+      instance_property = gen.id
+      expect(instance_property).not_to eq(-100)
+    end
+    
+    it 'instance of name' do
+      instance_property = gen.items
+      expect(instance_property).to eq([])
     end
   end
 end
+
+# describe Genre do
+#   context 'when instantiated' do
+#     it 'with name should create a Rental' do
+#       genre = Genre.new('Science')
+#       date = Time.now.strftime('%F')
+#       itema = Item.new(date, false)
+#       genre.add_item(itema)
+
+#       expect(genre.class).to eq Genre
+#       expect(genre.items.length).to be >= 1
+#     end
+#   end
+# end
 
 # describe Rental do
 #   context 'testing the rental class' do
