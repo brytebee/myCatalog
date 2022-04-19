@@ -45,7 +45,7 @@ describe Genre do
       instance_property = @gen.name
       expect(instance_property).to eq('Fiction')
     end
-    
+
     it 'instance of name' do
       instance_property = @gen.id
       expect(instance_property).not_to eq(-100)

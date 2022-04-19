@@ -1,18 +1,28 @@
 require_relative './item'
 require_relative './book'
 require_relative './label'
+require_relative './music_album'
+require_relative './genre'
 require_relative '../modules/create_book'
 require_relative '../modules/list_books'
 require_relative '../modules/list_labels'
+require_relative '../modules/create_music_album'
+require_relative '../modules/list_genre'
+require_relative '../modules/list_music_albums'
 
 class App
   include CreateBook
+  include CreateMusicAlbum
   include BookList
   include LabelList
+  include GenreList
+  include MusicAblbumList
 
   def initialize
     @books = []
     @labels = []
+    @music_albums = []
+    @genres = []
   end
 
   # rubocop:disable Metrics
@@ -38,7 +48,7 @@ class App
     when '9'
       add_game
     else
-      puts 'Please enter a number between 1 and 13.'
+      puts 'Please enter a number between 1 and 10.'
       puts
     end
     # rubocop:enable Metrics
