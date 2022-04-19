@@ -3,7 +3,6 @@ require_relative '../classes/game'
 describe 'Game Class' do
   before :each do
     @game = Game.new(false, '10/10/2021', '10/10/2010')
-    p @game
   end
 
   context 'With valid input to #new' do
