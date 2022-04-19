@@ -21,23 +21,24 @@ describe 'Author Class' do
     end
   end
 
-    context 'With valid input to "add_item" function' do
-      before :each do
-        @author = Author.new('Alick', 'Nyirenda')
-        stub_item = double('Item', published_date: '10/10/20', id: 1234, archived: false, author: @author)
-        @author.add_item(stub_item)
-      end
+  context 'With valid input to "add_item" function' do
+    before :each do
+      @author = Author.new('Alick', 'Nyirenda')
+      stub_item = double('Item', published_date: '10/10/20', id: 1234, archived: false)
+      allow(stub_item).to receive(:author=) { @author }
+      @author.add_item(stub_item)
+    end
 
-      it 'should add an object to the class instance property "item" array' do
-        instance_property_item_length = @author.items.length
-        p instance_property_item_length
-        expect(instance_property_item_length).to eq 1
-      end
+    it 'should add an object to the class instance property "item" array' do
+      instance_property_item_length = @author.items.length
+      p instance_property_item_length
+      expect(instance_property_item_length).to eq 1
+    end
 
-      it 'should add an object to the "item" array with a published_date as in initialiser' do 
-        instance_property_published_date = @author.items[0].published_date
-p instance_property_published_date
-        expect(instance_property_published_date).to eq '10/10/20'
-      end 
+    it 'should add an object to the "item" array with a published_date as in initialiser' do
+      instance_property_published_date = @author.items[0].published_date
+      p instance_property_published_date
+      expect(instance_property_published_date).to eq '10/10/20'
+    end
   end
 end
