@@ -7,7 +7,9 @@ module CreateBook
     cover_state = gets.chomp
     print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
     publish_date = gets.chomp
-    @books << Book.new(publish_date, publisher, cover_state)
+    book = Book.new(publish_date, publisher, cover_state)
+    @books << book
+    write_save
     puts 'Book  created successfully.'
 
     print 'Create new label: (y), or use already created label: (n) [Y/N] '
