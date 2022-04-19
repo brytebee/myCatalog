@@ -8,8 +8,11 @@ class Genre
     @id = rand(0..500)
   end
 
-  def add_item(item)
-    @items << item unless @items.include?(item)
-    @items.genre = self
+  def add_item=(item)
+    # @items << item unless @items.include?(item)
+    # @items.genre = self
+    item = Item.new(item, false)
+    @items.push(item)
+    item.genre = self
   end
 end

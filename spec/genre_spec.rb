@@ -8,6 +8,7 @@ describe Genre do
     today = Date.today
     twelve_years = Date.new(today.year - 12, today.month, today.day)
     item = Item.new(twelve_years, true)
+    item2 = Item.new(today, true)
     p gen
 
     it 'should return an instance of Genre class' do
@@ -19,8 +20,8 @@ describe Genre do
     end
     
     # it 'return the length of items' do
-    #   gen.add_item('Science')
-    #   expect(gen.items.length).to be(1)
+    #   gen.add_item=(item)
+    #   expect(gen.items.length).to eq(1)
     # end
 
     it 'instance of name' do
@@ -37,51 +38,17 @@ describe Genre do
       instance_property = gen.items
       expect(instance_property).to eq([])
     end
+
+    it 'Add item' do
+      f = gen.add_item=(item)
+      p f
+      expect(gen.items.length).to eq(1)
+    end
+
+    it 'return the length of items' do
+       f = gen.add_item=(item2)
+      p f
+      expect(gen.items.length).to be(2)
+    end
   end
 end
-
-# describe Genre do
-#   context 'when instantiated' do
-#     it 'with name should create a Rental' do
-#       genre = Genre.new('Science')
-#       date = Time.now.strftime('%F')
-#       itema = Item.new(date, false)
-#       genre.add_item(itema)
-
-#       expect(genre.class).to eq Genre
-#       expect(genre.items.length).to be >= 1
-#     end
-#   end
-# end
-
-# describe Rental do
-#   context 'testing the rental class' do
-#     before(:each) do
-#       @person = Person.new(23, 'Joe')
-#       @book = Book.new('Alchemist', 'Chloe')
-#       @book2 = Book.new('Rich Dad', 'Kiyosaki')
-#       @book3 = Book.new('Think & Grow Rich', 'Napoleon Hill')
-#       @date = Time.now.strftime('%F')
-#       @rental = Rental.new(@date, @book, @person)
-#       @rental2 = Rental.new(@date, @book2, @person)
-#     end
-
-#     it 'has the class of Rental' do
-#       expect(@rental.instance_of?(Rental)) == true
-#     end
-
-#     it 'has the class of Rental' do
-#       expect(@person.rentals.length).to be(2)
-#     end
-
-#     it 'has the class of Rental' do
-#       expect(@rental.date).to eq(@date)
-#     end
-
-#     it 'has the class of Rental' do
-#       @rental3 = Rental.new(@date, @book3, @person)
-#       expect(@person.rentals.length).to be(3)
-#     end
-#   end
-# end
-
