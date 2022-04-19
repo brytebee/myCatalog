@@ -18,8 +18,9 @@ end
 def options
   list_of_options
   input = gets.chomp
-  return if input == '10'
-  
+  if input == '10'
+    @app.exit_app
+  end
   @app.option(input)
   options
 end

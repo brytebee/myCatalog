@@ -10,6 +10,7 @@ require './modules/create_music_album'
 require './modules/list_genre'
 require './modules/list_music_albums'
 require './modules/save'
+require 'json'
 
 
 class App
