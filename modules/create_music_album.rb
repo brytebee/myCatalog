@@ -13,7 +13,7 @@ module CreateMusicAlbum
     @music_album << MusicAlbum.new(publish_date, is_on_spotify)
     puts 'Music album created successfully!'
 
-    print 'Create new label: (y), or use already created label: (n) [Y/N] '
+    print 'Create new genre: (y), or use already created genre: (n) [Y/N] '
     input = gets.chomp.downcase == 'y' || false
     if input
       create_genre(@music_album[-1])
@@ -29,8 +29,8 @@ module CreateMusicAlbum
   def create_genre(item = nil)
     print 'Enter Genre name: '
     name = gets.chomp
-    @genres << Label.new(name) if item.nil?
-    genre = Label.new(name)
+    @genres << Genre.new(name) unless @genres.include?(item)
+    genre = Genre.new(name)
     genre.add_item(item)
     @genres << genre
     puts 'Genre has been added successfully'
