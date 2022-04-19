@@ -56,4 +56,12 @@ class App
     end
     # rubocop:enable Metrics
   end
+
+  def exit_app
+    save_music_album
+    save_genre
+    puts
+    puts 'Thank You for using my myCatalog Library!'
+    puts 'Built with 💖 by Bright | Dejan | Alick 🗽'
+  end
 end
