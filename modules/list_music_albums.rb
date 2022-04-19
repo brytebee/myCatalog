@@ -3,9 +3,9 @@ module MusicAblbumList
     if @music_albums.length.zero?
       puts 'Database is empty'
     else
-      puts 'List of Genre: '
+      puts 'List of Music Albums: '
       @music_albums.each_with_index do |music_album, index|
-        puts "#{index}: Genre: Name: #{music_album.name}"
+        puts "#{index}: Music Album: Publish Date: #{music_album.publish_date}"
       end
     end
   end
