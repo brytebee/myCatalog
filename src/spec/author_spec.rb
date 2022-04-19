@@ -1,4 +1,4 @@
-require_relative '../classes/game'
+require_relative '../classes/author'
 
 describe 'Author Class' do
   before :each do
