@@ -10,7 +10,7 @@ module CreateBook
     @books << Book.new(publish_date, publisher, cover_state)
     puts 'Book  created successfully.'
 
-    print 'Create new label: (y), or use already created label: (n) [Y/N]'
+    print 'Create new label: (y), or use already created label: (n) [Y/N] '
     input = gets.chomp.downcase == 'y' || false
     if input
       create_label(@books[-1])
@@ -19,7 +19,7 @@ module CreateBook
       list_all_labels
       label_index = gets.chomp.to_i
       @labels[label_index].add_item(@books[-1])
-      puts 'item has been added to label'
+      puts 'book has been added to label'
     end
   end
 
