@@ -25,3 +25,6 @@ CREATE TABLE labels (
 	color varchar(20)
 	book_id int,
 );
+
+CREATE TABLE music_author(
+)
