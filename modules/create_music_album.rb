@@ -12,7 +12,8 @@ module CreateMusicAlbum
   def add_music_album
     puts 'Create a new Album'
     is_on_spotify = on_spotify?
-    publish_date = DateTime.now.strftime('%F')
+    print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
+    publish_date = gets.chomp
     puts "Published date: #{publish_date} and #{is_on_spotify ? 'on spotify.' : 'not on spotify.'}"
     @music_albums << MusicAlbum.new(publish_date, is_on_spotify)
     puts 'Music album created successfully!'
