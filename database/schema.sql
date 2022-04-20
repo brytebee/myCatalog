@@ -30,7 +30,8 @@ CREATE TABLE music_author(
 	id							SERIAL PRIMARY KEY,
 	publish_date		date,
 	on_spotify			boolean,
-	FOREIGN KEY(genre_id) REFERENCES genre(id)
+	FOREIGN KEY(genre_id) REFERENCES genre(id),
+	ADD CONSTRAINT fk_item FOREIGN KEY (item) REFERENCES item(id),
 );
 
 CREATE TABLE genre(
