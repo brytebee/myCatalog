@@ -31,10 +31,10 @@ CREATE TABLE music_author(
 	publish_date		date,
 	on_spotify			boolean,
 	FOREIGN KEY(genre_id) REFERENCES genre(id)
-)
+);
 
 CREATE TABLE genre(
 	id								SERIAL PRIMARY KEY,
 	name							VARCHAR(20),
 	music_album_id		INT
-)
+);
