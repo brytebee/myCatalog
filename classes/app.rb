@@ -1,4 +1,3 @@
-require 'json'
 require_relative './item'
 require_relative './book'
 require_relative './label'
@@ -72,7 +71,7 @@ class App
     end
     # rubocop:enable Metrics
   end
-  
+
   def exit_app
     save_music_album
     save_genre
@@ -80,7 +79,7 @@ class App
     puts 'Thank You for using my myCatalog Library!'
     puts 'Built with 💖 by Bright | Dejan | Alick 🗽'
   end
-    
+
   def start
     read_books
     read_labels
