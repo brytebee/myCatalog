@@ -19,6 +19,7 @@ require './modules/save'
 require 'json'
 require_relative '../json/book_json'
 require_relative '../json/author_json'
+require_relative '../json/game_json'
 require_relative '../json/label_json'
 
 class App
@@ -35,6 +36,7 @@ class App
   include BookJson
   include LabelJson
   include AuthorsJson
+  include GamesJson
 
   def initialize
     @books = []
@@ -103,5 +105,6 @@ class App
     read_books
     read_labels
     read_authors
+    read_games
   end
 end
