@@ -12,7 +12,6 @@ module GameCreator
     if @authors.length.zero?
       new_author = create_game_author
       @games << Game.new(multiplayer, last_played_at, publish_date, new_author)
-      write_games
     else
       print 'Do you want to create a new author or pick from the current author List. (Y or N)'
       select_new_author = gets.chomp
@@ -21,15 +20,14 @@ module GameCreator
       if select_new_author
         new_author = create_game_author
         @games << Game.new(multiplayer, last_played_at, publish_date, new_author)
-        write_games
       else
         puts 'Pick an author from the current Authors already given(based on ID)'
         list_all_authors
         author_id = gets.chomp.to_i
         @games << Game.new(multiplayer, last_played_at, publish_date, @authors[author_id])
-        write_games
       end
     end
+    write_games
   end
 
   def user_game_info

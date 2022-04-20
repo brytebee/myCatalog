@@ -4,7 +4,8 @@ module GamesJson
 
     file = File.open('./storage/games.json', 'w')
     game_data = @games.map do |game|
-      { class: game.class, publish_date: game.publish_date, last_played_at: game.last_played_at, multiplayer: game.multiplayer, author_first_name: game.author.first_name,
+      { class: game.class, publish_date: game.publish_date, last_played_at: game.last_played_at,
+        multiplayer: game.multiplayer, author_first_name: game.author.first_name,
         author_last_name: game.author.last_name }.compact
     end
     file.puts(JSON.generate(game_data))
