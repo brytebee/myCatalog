@@ -32,3 +32,6 @@ CREATE TABLE music_author(
 	on_spotify			boolean,
 	FOREIGN KEY(genre_id) REFERENCES genre(id)
 )
+
+CREATE TABLE genre(
+)
