@@ -1,3 +1,4 @@
+require 'json'
 require_relative './item'
 require_relative './book'
 require_relative './label'
@@ -11,21 +12,36 @@ require './modules/list_genre'
 require './modules/list_music_albums'
 require './modules/save'
 require 'json'
+require_relative '../json/book_json'
+require_relative '../json/label_json'
 
 class App
   include CreateBook
-  include CreateMusicAlbum
-  include BookList
   include LabelList
   include GenreList
   include MusicAblbumList
   include PreserveMusicAlbumGenre
+  include BookJson
+  include LabelJson
 
   def initialize
     @books = []
     @labels = []
     @music_albums = load_music_album
     @genres = load_genre
+  end
+
+  def console_entry_point
+    puts 'Welcome to my Catalog of Things App!'
+    until list_of_options
+      input = gets.chomp
+      if input == '10'
+        puts 'Good Bye!'
+        break
+      end
+
+      option input
+    end
   end
 
   # rubocop:disable Metrics
@@ -56,12 +72,17 @@ class App
     end
     # rubocop:enable Metrics
   end
-
+  
   def exit_app
     save_music_album
     save_genre
     puts
     puts 'Thank You for using my myCatalog Library!'
     puts 'Built with 💖 by Bright | Dejan | Alick 🗽'
+  end
+    
+  def start
+    read_books
+    read_labels
   end
 end

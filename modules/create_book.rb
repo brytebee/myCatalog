@@ -7,12 +7,17 @@ module CreateBook
     cover_state = gets.chomp
     print 'Date of publish [Enter date in format (yyyy-mm-dd)]: '
     publish_date = gets.chomp
-    @books << Book.new(publish_date, publisher, cover_state)
+    book = Book.new(publish_date, publisher, cover_state)
+    @books << book
+    write_save
     puts 'Book  created successfully.'
 
     print 'Create new label: (y), or use already created label: (n) [Y/N] '
     input = gets.chomp.downcase == 'y' || false
     if input
+      create_label(@books[-1])
+    elsif @labels.length.zero?
+      puts 'Database is empty. Create new label'
       create_label(@books[-1])
     else
       puts 'Select a Label by index:'
@@ -32,6 +37,7 @@ module CreateBook
     label = Label.new(title, color)
     label.add_item(item)
     @labels << label
+    write_save
     puts 'Label has been added successfully'
   end
 end

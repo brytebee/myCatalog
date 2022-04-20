@@ -28,7 +28,8 @@ end
 
 def main
   @app = App.new
-  options
+  @app.start
+  @app.console_entry_point
 end
 
 main

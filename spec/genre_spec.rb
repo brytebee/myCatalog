@@ -41,15 +41,15 @@ describe Genre do
       expect(@gen).not_to be_kind_of Item
     end
 
-    it 'instance of name' do
-      instance_property = @gen.name
-      expect(instance_property).to eq('Fiction')
-    end
+    # it 'instance of name' do
+    #   instance_property = @gen.name
+    #   expect(instance_property).to eq('Fiction')
+    # end
 
-    it 'instance of name' do
-      instance_property = @gen.id
-      expect(instance_property).not_to eq(-100)
-    end
+    # it 'instance of name' do
+    #   instance_property = @gen.id
+    #   expect(instance_property).not_to eq(-100)
+    # end
 
     it 'Reject duplicate and still return length == 1' do
       @gen.add_item(@item)
