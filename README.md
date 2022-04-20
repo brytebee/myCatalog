@@ -11,6 +11,9 @@ The app allows you to:
 - Save data into json files.
 - Pick up where you left by reading back json data into the app.
 
+## UML Class Diagram
+![image](https://user-images.githubusercontent.com/27709832/164226706-2a5764ee-7d6f-42bf-a573-a32b08b4ca17.png)
+
 ## Demo
 
 ![School_library](https://user-images.githubusercontent.com/27709832/162444449-0cf961e4-dedb-4499-81c2-86614e51e084.gif)
