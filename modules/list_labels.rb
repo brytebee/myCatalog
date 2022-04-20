@@ -8,7 +8,6 @@ module LabelList
       @labels.each_with_index do |label, index|
         puts "#{index}: Label: Title: #{label.title}, Color: #{label.color}"
       end
-
     end
   end
 end
