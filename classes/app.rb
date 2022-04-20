@@ -1,4 +1,3 @@
-require 'json'
 require_relative './item'
 require_relative './book'
 require_relative './label'
@@ -7,20 +6,29 @@ require_relative './genre'
 require_relative '../modules/create_book'
 require_relative '../modules/list_books'
 require_relative '../modules/list_labels'
+require './modules/create_music_album'
+require './modules/list_genre'
+require './modules/list_music_albums'
+require './modules/save'
+require 'json'
 require_relative '../json/book_json'
 require_relative '../json/label_json'
 
 class App
   include CreateBook
   include LabelList
+  include GenreList
+  include CreateMusicAlbum
+  include MusicAblbumList
+  include PreserveMusicAlbumGenre
   include BookJson
   include LabelJson
 
   def initialize
     @books = []
     @labels = []
-    @music_albums = []
-    @genres = []
+    @music_albums = load_music_album
+    @genres = load_genre
   end
 
   def console_entry_point
@@ -28,6 +36,7 @@ class App
     until list_of_options
       input = gets.chomp
       if input == '10'
+        exit_app
         puts 'Good Bye!'
         break
       end
@@ -63,6 +72,14 @@ class App
       puts
     end
     # rubocop:enable Metrics
+  end
+
+  def exit_app
+    save_music_album
+    save_genre
+    puts
+    puts 'Thank You for using my myCatalog Library!'
+    puts 'Built with 💖 by Bright | Dejan | Alick 🗽'
   end
 
   def start

@@ -15,6 +15,13 @@ def list_of_options
   puts '10 - Exit'
 end
 
+def options
+  list_of_options
+  input = gets.chomp
+  @app.option(input)
+  options
+end
+
 def main
   @app = App.new
   @app.start
