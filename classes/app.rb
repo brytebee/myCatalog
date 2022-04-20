@@ -18,6 +18,7 @@ require './modules/list_music_albums'
 require './modules/save'
 require 'json'
 require_relative '../json/book_json'
+require_relative '../json/author_json'
 require_relative '../json/label_json'
 
 class App
@@ -33,6 +34,7 @@ class App
   include PreserveMusicAlbumGenre
   include BookJson
   include LabelJson
+  include AuthorsJson
 
   def initialize
     @books = []
@@ -100,5 +102,6 @@ class App
   def start
     read_books
     read_labels
+    read_authors
   end
 end
