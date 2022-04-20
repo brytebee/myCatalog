@@ -17,7 +17,9 @@ create table book(
 	publish_date date,
 	publisher varchar(20),
 	cover_state varchar(20),
-	FOREIGN KEY (label_id) REFERENCES labels (id)
+	FOREIGN KEY (label_id) REFERENCES labels (id),
+	ADD CONSTRAINT fk_item FOREIGN KEY (item) REFERENCES item(id),
+);
 
 CREATE TABLE labels (
 	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
@@ -27,15 +29,15 @@ CREATE TABLE labels (
 );
 
 CREATE TABLE music_author(
-	id							SERIAL PRIMARY KEY,
-	publish_date		date,
-	on_spotify			boolean,
+	id SERIAL PRIMARY KEY,
+	publish_date date,
+	on_spotify boolean,
 	FOREIGN KEY(genre_id) REFERENCES genre(id),
 	ADD CONSTRAINT fk_item FOREIGN KEY (item) REFERENCES item(id),
 );
 
 CREATE TABLE genre(
-	id								SERIAL PRIMARY KEY,
-	name							VARCHAR(20),
-	music_album_id		INT
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(20),
+	music_album_id NT
 );
