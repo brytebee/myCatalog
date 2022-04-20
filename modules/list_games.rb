@@ -6,7 +6,7 @@ module GameList
       puts 'List of all Games: '
       @games.each_with_index do |game, index|
         puts "#{index}) [Game] Publish Date: #{game.publish_date}, Last Played At: #{game.last_played_at},
-           Multiplayer: #{game.multiplayer}"
+  Multiplayer: #{game.multiplayer}, Author: First_Name: #{game.author.first_name}, Last_Name: #{game.author.last_name}"
       end
     end
   end
