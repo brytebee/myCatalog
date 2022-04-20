@@ -33,7 +33,7 @@ module CreateMusicAlbum
   def create_genre(item = nil)
     print 'Enter Genre name: '
     name = gets.chomp
-    @genres << Genre.new(name) unless @genres.include?(item)
+    @genres << Genre.new(name) if item.nil?
     genre = Genre.new(name)
     genre.add_item(item)
     @genres << genre

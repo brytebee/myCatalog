@@ -18,6 +18,7 @@ class App
   include CreateBook
   include LabelList
   include GenreList
+  include CreateMusicAlbum
   include MusicAblbumList
   include PreserveMusicAlbumGenre
   include BookJson
@@ -35,6 +36,7 @@ class App
     until list_of_options
       input = gets.chomp
       if input == '10'
+        exit_app
         puts 'Good Bye!'
         break
       end
