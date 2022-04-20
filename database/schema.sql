@@ -28,5 +28,6 @@ CREATE TABLE labels (
 
 CREATE TABLE music_author(
 	id							SERIAL PRIMARY KEY,
-	publish_date		date
+	publish_date		date,
+	on_spotify			boolean
 )
