@@ -4,15 +4,22 @@ require_relative './book'
 require_relative './label'
 require_relative './music_album'
 require_relative './genre'
+require_relative './game'
 require_relative '../modules/create_book'
+require_relative '../modules/create_game'
 require_relative '../modules/list_books'
+require_relative '../modules/list_authors'
 require_relative '../modules/list_labels'
+require_relative '../modules/list_games'
 require_relative '../json/book_json'
 require_relative '../json/label_json'
 
 class App
   include CreateBook
+  include GameCreator
   include LabelList
+  include GameList
+  include AuthorList
   include BookJson
   include LabelJson
 
@@ -21,6 +28,8 @@ class App
     @labels = []
     @music_albums = []
     @genres = []
+    @games = []
+    @authors = []
   end
 
   def console_entry_point
@@ -55,7 +64,6 @@ class App
       add_book
     when '8'
       add_music_album
-
     when '9'
       add_game
     else
