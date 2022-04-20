@@ -11,10 +11,12 @@ module GameCreator
       print 'Enter the date of publish [Enter date in format (yyyy-mm-dd)]: '
       publish_date = gets.chomp
       Date.parse(publish_date)
+      @games << Game.new(multiplayer, last_played_at, publish_date)
+      p @games
+      break
     rescue StandardError
       print "Invalid date entered. Please insert in the format specified \n"
     end
-    @games << Game.new(multiplayer, last_played_at, publish_date)
     puts 'Game created successfully.'
   end
 end
