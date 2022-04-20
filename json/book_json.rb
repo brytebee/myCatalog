@@ -1,13 +1,13 @@
 module BookJson
   def write_save
-    File.write('books.json', @books.to_json)
-    File.write('labels.json', @labels.to_json)
+    File.write('../storage/books.json', @books.to_json)
+    File.write('../storage/labels.json', @labels.to_json)
   end
 
   # rubocop:disable Style/GuardClause
   def read_books
-    if File.exist?('books.json')
-      JSON.parse(File.read('books.json')).map do |book|
+    if File.exist?('../storage/books.json')
+      JSON.parse(File.read('../storage/books.json')).map do |book|
         new_book = add_new_book(book)
         @books << new_book
       end

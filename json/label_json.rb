@@ -1,8 +1,8 @@
 module LabelJson
   # rubocop:disable Style/GuardClause
   def read_labels
-    if File.exist?('labels.json')
-      JSON.parse(File.read('labels.json')).map do |label|
+    if File.exist?('../storage/labels.json')
+      JSON.parse(File.read('../storage/labels.json')).map do |label|
         new_label = add_label(label)
         @labels << new_label
       end
