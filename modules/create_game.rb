@@ -27,6 +27,7 @@ module GameCreator
         @games << Game.new(multiplayer, last_played_at, publish_date, @authors[author_id])
       end
     end
+    write_games
   end
 
   def user_game_info
@@ -57,6 +58,7 @@ module GameCreator
     last_name = gets.chomp
     new_author = Author.new(first_name, last_name)
     @authors << new_author
+    write_authors
     puts 'Author has been added successfully'
     new_author
   end

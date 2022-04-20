@@ -6,6 +6,7 @@ module AuthorCreator
     print "Insert the author's last name: "
     last_name = gets.chomp
     @authors << Author.new(first_name, last_name)
+    write_authors
     puts 'Author created successfully.'
   end
 end
