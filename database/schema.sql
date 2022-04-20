@@ -27,4 +27,5 @@ CREATE TABLE labels (
 );
 
 CREATE TABLE music_author(
+	id			SERIAL PRIMARY KEY,
 )
