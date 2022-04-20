@@ -83,7 +83,7 @@ class App
     when '10'
       add_author
     else
-      puts 'Please enter a number between 1 and 11s.'
+      puts 'Please enter a number between 1 and 11.'
       puts
     end
     # rubocop:enable Metrics
