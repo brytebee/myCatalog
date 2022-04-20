@@ -19,7 +19,7 @@ module CreateMusicAlbum
     puts 'Music album created successfully!'
     unless @genres.length.zero?
       puts 'Select a Album by index:'
-      list_all_genres 
+      list_all_genres
       genre_index = gets.chomp.to_i
       @genres[genre_index].add_item(@music_albums[-1])
       puts 'Album has been added to Genre'
