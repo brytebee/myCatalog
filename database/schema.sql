@@ -29,5 +29,6 @@ CREATE TABLE labels (
 CREATE TABLE music_author(
 	id							SERIAL PRIMARY KEY,
 	publish_date		date,
-	on_spotify			boolean
+	on_spotify			boolean,
+	FOREIGN KEY(genre_id) REFERENCES genre(id)
 )
