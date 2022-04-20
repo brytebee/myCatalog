@@ -24,13 +24,13 @@ The app allows you to:
 
 ## Getting started
 
-1. [Clone the project](https://github.com/brytebee/school-library.git)
+1. [Clone the project](https://github.com/brytebee/myCatalog)
 2. Installing the packages by running `bundle install`
 3. On the cmd run `ruby <filename>.rb`
 
 ## Testing
 
-1. [Clone the project](https://github.com/brytebee/school-library.git)
+1. [Clone the project](https://github.com/brytebee/myCatalog)
 2. Installing the packages by running `bundle install`
 3. `cd` to `spec` directory
 4. Run `ruby <filename>.rb` | `rspec spec` | `rspec`
@@ -64,7 +64,7 @@ Load the page and enjoy!
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/brytebee/school-library/issues) here 😏😏.
+Feel free to check the [issues page](https://github.com/brytebee/myCatalog/issues) here 😏😏.
 
 ## Show your support
 
