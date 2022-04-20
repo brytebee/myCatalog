@@ -34,5 +34,6 @@ CREATE TABLE music_author(
 )
 
 CREATE TABLE genre(
-	id								SERIAL PRIMARY KEY
+	id								SERIAL PRIMARY KEY,
+	name							VARCHAR(20)
 )
