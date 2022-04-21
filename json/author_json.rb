@@ -13,6 +13,6 @@ module AuthorsJson
   end
 
   def add_new_author(author)
-    Author.new(author['first_name'], author['last_name'])
+    Author.new(author['first_name'], author['last_name'], author['id'])
   end
 end
