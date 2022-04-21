@@ -41,3 +41,19 @@ CREATE TABLE genre(
 	name VARCHAR(20),
 	music_album_id NT
 );
+
+CREATE TABLE game(
+	id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+	publish_date date,
+  last_played_at date,
+  multiplayer boolean,
+	FOREIGN KEY (author_id) REFERENCES authors (id),
+	ADD CONSTRAINT fk_item FOREIGN KEY (item) REFERENCES item(id),
+);
+
+CREATE TABLE authors(
+  id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+  first_name VARCHAR(30),
+  last_name VARCHAR(30),
+  game_id int
+);
