@@ -5,8 +5,7 @@ module GamesJson
     file = File.open('./storage/games.json', 'w')
     game_data = @games.map do |game|
       { class: game.class, publish_date: game.publish_date, last_played_at: game.last_played_at,
-        multiplayer: game.multiplayer, author_first_name: game.author.first_name,
-        author_last_name: game.author.last_name }.compact
+        multiplayer: game.multiplayer, author: game.author }.compact
     end
     file.puts(JSON.generate(game_data))
     file.close
@@ -22,7 +21,7 @@ module GamesJson
   end
 
   def add_new_game(game)
-    new_author = Author.new(game['author_first_name'], game['author_last_name'])
+    new_author = @authors.find { |author| author.id == game['author']['id'] }
     Game.new(game['multiplayer'], game['last_played_at'], game['publish_date'], new_author)
   end
 end
