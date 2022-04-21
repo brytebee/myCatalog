@@ -7,7 +7,7 @@ module AuthorList
       @authors.each_with_index do |author, index|
         puts "#{index}) [Author] First Name: #{author.first_name}, Last Name: #{author.last_name} "
         puts "This author has the following Games in this collection:
-        #{author.items.map(&:id)}"
+        GameID['s] :#{author.items.map(&:id)}"
       end
     end
   end
