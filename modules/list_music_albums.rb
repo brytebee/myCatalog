@@ -1,6 +1,5 @@
 module MusicAblbumList
   def list_all_music_albums
-    p @music_albums
     if @music_albums.length.zero?
       puts 'Database is empty'
     else
