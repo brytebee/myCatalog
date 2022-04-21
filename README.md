@@ -12,12 +12,17 @@ The app allows you to:
 - Pick up where you left by reading back json data into the app.
 
 ## UML Class Diagram
+
 ![image](https://user-images.githubusercontent.com/27709832/164226706-2a5764ee-7d6f-42bf-a573-a32b08b4ca17.png)
 
 ## Demo
 
-![School_library](https://user-images.githubusercontent.com/27709832/162444449-0cf961e4-dedb-4499-81c2-86614e51e084.gif)
-`placeholder`
+![Ruby DB](https://user-images.githubusercontent.com/27709832/164443325-04200506-e6ce-47ce-b36b-a59734c71d2a.gif)
+
+
+## Presentation Video
+
+[Watch our awesome presentation](https://drive.google.com/file/d/1Ewq0jtOH7QdiiAIqsqz_jYP7uw_rPpx5/view?usp=sharing)
 
 ## Built With
 
