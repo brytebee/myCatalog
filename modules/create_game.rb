@@ -6,6 +6,7 @@ module GameCreator
     publish_date = user_options[2]
     create_new_game(multiplayer, last_played_at, publish_date)
     puts 'Game created successfully.'
+    write_authors
   end
 
   def create_new_game(multiplayer, last_played_at, publish_date)
@@ -37,13 +38,14 @@ module GameCreator
     multiplayer = %w[y Y].include?(multiplayer)
     last_played_at = ''
     publish_date = ''
-    begin
+    loop do
       print 'Enter last date the game was played [Enter date in format (yyyy-mm-dd)]: '
       last_played_at = gets.chomp
       Date.parse(last_played_at)
       print 'Enter the date of publish [Enter date in format (yyyy-mm-dd)]: '
       publish_date = gets.chomp
       Date.parse(publish_date)
+      break
     rescue StandardError
       # p e
       print "Invalid date entered. Please insert in the format specified \n"
@@ -58,7 +60,6 @@ module GameCreator
     last_name = gets.chomp
     new_author = Author.new(first_name, last_name)
     @authors << new_author
-    write_authors
     puts 'Author has been added successfully'
     new_author
   end
