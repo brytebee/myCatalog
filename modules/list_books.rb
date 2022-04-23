@@ -5,7 +5,7 @@ module BookList
     else
       puts 'List of all Books: '
       @books.each_with_index do |book, index|
-        puts "#{index}: [Book] Publish Date: #{book.publish_date}, Publisher: #{book.publisher},
+        puts "#{index}: [Book] Id: #{book.id}, Publish Date: #{book.publish_date}, Publisher: #{book.publisher},
            Cover state: #{book.cover_state}"
         label(book)
       end
@@ -13,6 +13,6 @@ module BookList
   end
 
   def label(item)
-    puts "Label : Title: #{item.label.title} Color: #{item.label.color}" if item.label
+    puts "Label : Id: #{item.label.id}, Title: #{item.label.title} Color: #{item.label.color}" if item.label
   end
 end

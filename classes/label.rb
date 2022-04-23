@@ -1,15 +1,13 @@
 require_relative 'item'
 
-class Label < Book
+class Label
   attr_accessor :title, :color, :items
-  attr_writer :id
+  attr_reader :id
 
-  def initialize(title, color)
-    super(publish_date, publisher, cover_state)
-    @id = Random.rand(1..1000)
+  def initialize(title, color, id = Random.rand(1..1000))
+    @id = id
     @title = title
     @color = color
-    @publish_date = publish_date
     @items = []
   end
 
@@ -21,9 +19,10 @@ class Label < Book
   def to_json(*args)
     {
       'label' => self.class.name,
+      'id' => @id,
       'title' => @title,
       'color' => @color,
-      'items' => @items
+     
     }.to_json(*args)
   end
 end

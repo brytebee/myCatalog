@@ -1,7 +1,6 @@
 module BookJson
-  def write_save
+  def write_book
     File.write('./storage/books.json', @books.to_json)
-    File.write('./storage/labels.json', @labels.to_json)
   end
 
   # rubocop:disable Style/GuardClause
@@ -17,6 +16,7 @@ module BookJson
   # rubocop:enable Style/GuardClause
 
   def add_new_book(book)
-    Book.new(book['publish_date'], book['publisher'], book['cover_state'])
+    new_label = Label.new(book['label_title'], book['label_color'])
+    Book.new(book['publish_date'], book['publisher'], book['cover_state'], new_label)
   end
 end
