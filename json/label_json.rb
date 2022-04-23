@@ -13,6 +13,6 @@ module LabelJson
   end
 
   def add_label(label)
-    Label.new(label['id'], label['title'], label['color'])
+    Label.new(label['title'], label['color'], label['id'])
   end
 end

@@ -6,7 +6,7 @@ module LabelList
     else
       puts 'List of Labels: '
       @labels.each_with_index do |label, index|
-        puts "#{index}: Label:  Title: #{label.title}, Color: #{label.color}, Id: #{label.id},"
+        puts "#{index}: Label:  Title: #{label.title}, Color: #{label.color}, Id: #{label.id} Item: #{label.items}"
       end
     end
   end
