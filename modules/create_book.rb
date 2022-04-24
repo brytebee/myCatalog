@@ -16,8 +16,7 @@ module CreateBook
       @books << Book.new(publish_date, publisher, cover_state, new_label)
     elsif @labels.length.zero?
       puts 'Database is empty. Create new label'
-      new_label = create_label
-      @books << Book.new(publish_date, publisher, cover_state, new_label)
+      new_label.add_item(@books[-1])
     else
       puts 'Select a Label by index:'
       list_all_labels
