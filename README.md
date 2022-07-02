@@ -78,16 +78,6 @@ Feel free to check the [issues page](https://github.com/brytebee/myCatalog/issue
 
 Give a ⭐️ if you like this project!
 
-## Acknowledgments
-
-All thank to God Almighty for life.
-To the:
-
-- entire microverse community,
-- my conding partners,
-- stand-up team, and
-- morning team.
-
 Thanks for all contributions and reviews.
 
 ## 📝 License
